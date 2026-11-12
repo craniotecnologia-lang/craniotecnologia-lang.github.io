@@ -44,37 +44,78 @@
       </div>
       <p class="download-details">Versão 0.11.8·APK de 4,2 MB · Android 8.0 ou superior</p>
       <p class="download-help">Baixar para instalar. O acesso ao servidor e a conta de usuário são fornecidos pelo administrador.</p>
-    </section>
-    <div style="margin-top: 50px; text-align: center;">
-    <h3 style="color: #fff; margin-bottom: 25px; font-family: sans-serif;">Conheça o aplicativo</h3>
+   <!-- Seção do Carrossel de Capturas de Tela -->
+<div style="margin-top: 50px; text-align: center;">
+    <h3 style="color: #fff; margin-bottom: 15px; font-family: sans-serif;">Conheça o aplicativo</h3>
     
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto;">
+    <!-- Container principal do Carrossel -->
+    <div style="position: relative; max-width: 500px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); background: #111;">
         
-        <div style="flex: 1 1 280px; max-width: 300px;">
-            <img src="Captura de tela 2026-11-12 095607.png" alt="Tela 1 do Aplicativo" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+        <!-- Faixa de imagens -->
+        <div class="carousel-track" style="display: flex; transition: transform 0.4s ease-in-out; width: 600%;">
+            
+            <div style="min-width: 100%; box-sizing: border-box; cursor: pointer;" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="Captura de tela 2026-11-12 095607.png" alt="Tela 1" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="min-width: 100%; box-sizing: border-box; cursor: pointer;" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="Captura de tela 2026-11-12 095617.png" alt="Tela 2" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="min-width: 100%; box-sizing: border-box; cursor: pointer;" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="Captura de tela 2026-11-12 095637.png" alt="Tela 3" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="min-width: 100%; box-sizing: border-box; cursor: pointer;" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="Captura de tela 2026-11-12 095651.png" alt="Tela 4" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="min-width: 100%; box-sizing: border-box; cursor: pointer;" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="Captura de tela 2026-11-12 095707.png" alt="Tela 5" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="min-width: 100%; box-sizing: border-box; cursor: pointer;" onclick="openLightbox(this.querySelector('img').src)">
+                <img src="Captura de tela 2026-11-12 095736.png" alt="Tela 6" style="width: 100%; height: auto; display: block;">
+            </div>
+
         </div>
 
-        <div style="flex: 1 1 280px; max-width: 300px;">
-            <img src="Captura de tela 2026-11-12 095617.png" alt="Tela 2 do Aplicativo" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-        </div>
-
-        <div style="flex: 1 1 280px; max-width: 300px;">
-            <img src="Captura de tela 2026-11-12 095637.png" alt="Tela 3 do Aplicativo" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-        </div>
-
-        <div style="flex: 1 1 280px; max-width: 300px;">
-            <img src="Captura de tela 2026-11-12 095651.png" alt="Tela 4 do Aplicativo" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-        </div>
-
-        <div style="flex: 1 1 280px; max-width: 300px;">
-            <img src="Captura de tela 2026-11-12 095707.png" alt="Tela 5 do Aplicativo" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-        </div>
-
-        <div style="flex: 1 1 280px; max-width: 300px;">
-            <img src="Captura de tela 2026-11-12 095736.png" alt="Tela 6 do Aplicativo" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-        </div>
-
+        <!-- Botões de Navegação (Esquerda / Direita) -->
+        <button onclick="moveSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; padding: 12px 16px; cursor: pointer; border-radius: 50%; font-size: 16px; z-index: 10; transition: background 0.2s;">&#10094;</button>
+        <button onclick="moveSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; padding: 12px 16px; cursor: pointer; border-radius: 50%; font-size: 16px; z-index: 10; transition: background 0.2s;">&#10095;</button>
     </div>
+    
+    <p style="color: #aaa; font-size: 13px; margin-top: 10px; font-family: sans-serif;">Use as setas para passar as fotos ou clique nelas para ampliar</p>
+</div>
+
+<!-- Modal de Ampliação (Lightbox) -->
+<div id="lightbox-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; cursor: pointer;" onclick="closeLightbox()">
+    <span style="position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+    <img id="lightbox-img" src="" style="max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 0 25px rgba(255,255,255,0.2);">
+</div>
+
+<!-- Script de Controle do Carrossel e do Zoom -->
+<script>
+    let currentSlide = 0;
+    const totalSlides = 6;
+
+    function moveSlide(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        } else if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+        const track = document.querySelector('.carousel-track');
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function openLightbox(src) {
+        const modal = document.getElementById('lightbox-modal');
+        const img = document.getElementById('lightbox-img');
+        img.src = src;
+        modal.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox-modal').style.display = 'none';
+    }
+</script>
 </div>
 
     <hr class="rule">
